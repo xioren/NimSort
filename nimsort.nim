@@ -71,7 +71,7 @@ proc displayFill(data: seq[int]) =
         drawBar(idx, val, fgGreen)
       else:
         drawBar(idx, val)
-    sleep(1)
+    sleep(5)
   stdOut.setCursorPos(0, 0)
   sleep(250)
 
@@ -98,7 +98,7 @@ proc bubbleSort(data: var seq[int]): bool =
       display(data, [upperBound], j, current)
       if resized:
         return
-      # sleep(bubbleDelay)
+      sleep(bubbleDelay)
   result = true
 
 
@@ -113,7 +113,7 @@ proc shakerSort(data: var seq[int]): bool =
       display(data, [i, upperBound], j, current)
       if resized:
         return
-      # sleep(shakerDelay)
+      sleep(shakerDelay)
     for k in countdown(pred(upperBound), succ(i)):
       if data[k] < data[pred(k)]:
         current = pred(k)
@@ -121,7 +121,7 @@ proc shakerSort(data: var seq[int]): bool =
       display(data, [i, upperBound], k, current)
       if resized:
         return
-      # sleep(shakerDelay)
+      sleep(shakerDelay)
   result = true
 
 
@@ -135,7 +135,7 @@ proc selectionSort(data: var seq[int]): bool =
       display(data, [n], i, select)
       if resized:
         return
-      # sleep(selectionDelay)
+      sleep(selectionDelay)
     swap(data[select], data[n])
   result = true
 
@@ -216,7 +216,7 @@ proc gnomeSort(data: var seq[int]): bool =
     display(data, [], i, pred(i))
     if resized:
       return
-    # sleep(gnomeDelay)
+    sleep(gnomeDelay)
   result = true
 
 
