@@ -58,7 +58,7 @@ proc display(data: seq[int], bounds: openarray[int], currentIndex, lookAhead: in
       drawBar(idx, val, fgRed)
     else:
       drawBar(idx, val)
-    stdOut.flushFile()
+  stdOut.flushFile()
   stdOut.setCursorPos(0, 0)
 
 
@@ -71,6 +71,7 @@ proc displayFill(data: seq[int]) =
         drawBar(idx, val, fgGreen)
       else:
         drawBar(idx, val)
+    stdOut.flushFile()
     sleep(5)
   stdOut.setCursorPos(0, 0)
   sleep(250)
