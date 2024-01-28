@@ -165,9 +165,9 @@ proc clearIndices() =
       decolorizeColumn(idx)
 
 
-proc display(data: seq[int], nextIndex: int, lookAhead, lowerBound, upperBound: int = -1) =
+proc display(data: seq[int], index: int, lookAhead, lowerBound, upperBound: int = -1) =
   if not resized:
-    updateIndices(nextIndex, lookAhead, lowerBound, upperBound)
+    updateIndices(index, lookAhead, lowerBound, upperBound)
     nextFrameBuffer = generateFrame(data)
     frameDelta = generateFrameDelta(currentFrameBuffer, nextFrameBuffer)
     drawFrame(frameDelta)
