@@ -2,12 +2,6 @@ import std/[posix, terminal, strutils]
 from os import sleep
 from random import rand, randomize
 
-# NOTE: all algorithms are in place variants written with terminal display in mind, not efficiency.
-
-
-##################################
-# consts and utils
-##################################
 
 type
   Algo = enum
