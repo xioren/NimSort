@@ -1,3 +1,6 @@
+# NOTE: all algorithms are in place variants written with terminal display in mind, not efficiency.
+
+
 ##################################
 # helpers
 ##################################
