@@ -285,7 +285,7 @@ when isMainModule:
     setCursorPos(0, 0)
     main()
   except KeyboardInterrupt:
-    echo "yo"
+    discard
   except Exception as e:
     exception = e.msg
   finally:
