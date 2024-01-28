@@ -221,7 +221,6 @@ proc writeHeader(algo: Algo) =
 include algorithms
 
 proc main() =
-  # TODO: add resize exception
   var
     completed: bool
     algo: Algo
