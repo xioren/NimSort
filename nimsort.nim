@@ -144,13 +144,13 @@ proc drawIndices() =
   stdout.flushFile()
 
 
-proc updateIndices(nextIndex, lookAhead, lowerBound, upperBound: int) =
+proc updateIndices(index, lookAhead, lowerBound, upperBound: int) =
   currentIndices[0] = nextIndices[0]
   currentIndices[1] = nextIndices[1]
   currentIndices[2] = nextIndices[2]
   currentIndices[3] = nextIndices[3]
 
-  nextIndices[0] = nextIndex
+  nextIndices[0] = index
   nextIndices[1] = lookAhead
   nextIndices[2] = lowerBound
   nextIndices[3] = upperBound
