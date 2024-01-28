@@ -117,15 +117,6 @@ proc decolorizeColumn(x: int) =
       stdOut.write(fillChar)
 
 
-proc clearIndices() =
-  for i, idx in nextIndices:
-    if idx == -1:
-      if currentIndices[i] != -1:
-        decolorizeColumn(currentIndices[i])
-    else:
-      decolorizeColumn(idx)
-
-
 proc drawFrame(frame: Frame) =
   # NOTE: by rows
   for y in 0 ..< tHeight:
@@ -158,6 +149,7 @@ proc drawIndices() =
     colorizeColumn(nextIndices[3], fgBlue)
   stdout.flushFile()
 
+
 proc updateIndices(nextIndex, lookAhead, lowerBound, upperBound: int) =
   currentIndices[0] = nextIndices[0]
   currentIndices[1] = nextIndices[1]
@@ -168,6 +160,15 @@ proc updateIndices(nextIndex, lookAhead, lowerBound, upperBound: int) =
   nextIndices[1] = lookAhead
   nextIndices[2] = lowerBound
   nextIndices[3] = upperBound
+
+
+proc clearIndices() =
+  for i, idx in nextIndices:
+    if idx == -1:
+      if currentIndices[i] != -1:
+        decolorizeColumn(currentIndices[i])
+    else:
+      decolorizeColumn(idx)
 
 
 proc display(data: seq[int], nextIndex: int, lookAhead, lowerBound, upperBound: int = -1) =
