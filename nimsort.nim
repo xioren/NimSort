@@ -139,26 +139,6 @@ proc drawFrame(frame: Frame) =
   stdout.flushFile()
 
 
-# proc drawIndices() =
-#   for x in 0 ..< tWidth:
-#     if x == nextIndices[1]:
-#       if x != currentIndices[1]:
-#         decolorizeColumn(currentIndices[1])
-#       colorizeColumn(x, fgRed)
-#     if x == nextIndices[0]:
-#       if x != currentIndices[0]:
-#         decolorizeColumn(currentIndices[0])
-#       colorizeColumn(x, fgGreen)
-#     if x == nextIndices[2]:
-#       if x != currentIndices[2]:
-#         decolorizeColumn(currentIndices[2])
-#       colorizeColumn(x, fgBlue)
-#     if x == nextIndices[3]:
-#       if x != currentIndices[3]:
-#         decolorizeColumn(currentIndices[3])
-#       colorizeColumn(x, fgBlue)
-#   stdout.flushFile()
-
 proc drawIndices() =
   if nextIndices[0] != -1:
     if nextIndices[0] != currentIndices[0]:
@@ -206,7 +186,7 @@ proc displayFill() =
     colorizeColumn(x, fgGreen)
     sleep(5)
   stdout.flushFile()
-  sleep(800)
+  sleep(500)
 
 
 proc writeHeader(algo: Algo) =
@@ -308,7 +288,7 @@ when isMainModule:
   except Exception as e:
     exception = e.msg
   finally:
-    # stdOut.eraseScreen()
+    stdOut.eraseScreen()
     stdOut.setCursorPos(0, 0)
     stdOut.showCursor()
     # NOTE: echo exception after clearing screen
